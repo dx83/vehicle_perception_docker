@@ -1,0 +1,21 @@
+[project]
+name = "vehicle_perception_runtime"
+version = "0.2.0"
+description = "vehicle perception runtime for project4"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "lap>=0.5.12",
+    "numpy>=2.0",
+    "opencv-python>=4.11",
+    "pyyaml>=6.0",
+    "torch==2.10.0",
+    "ultralytics==8.4.150",
+    "unidepth @ git+https://github.com/lpiccinelli-eth/UniDepth.git@8d8cfe4c7ee15297099983607febf0d4f32eb3d6",
+]
+
+[dependency-groups]
+dev = ["pytest>=9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".."]

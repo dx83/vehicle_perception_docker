@@ -1,0 +1,591 @@
+{
+  "format": 1,
+  "package": "vehicle_perception_docker",
+  "delivery_type": "USER_REQUESTED_SELF_CONTAINED_FOLDER",
+  "new_files": [
+    ".dockerignore",
+    ".env",
+    ".gitignore",
+    "compose.yaml",
+    "Dockerfile",
+    "docs/phone_video_quality.md",
+    "docs/validation.md",
+    "docs/web_video_quality.md",
+    "models/unidepth-v2-vitb14/config.json",
+    "models/unidepth-v2-vitb14/model.safetensors",
+    "models/yolo26m-seg.pt",
+    "README.md",
+    "scripts/deployment/extract_verify_bundle.py",
+    "vehicle_perception_runtime_fix/__init__.py",
+    "vehicle_perception_runtime_fix/config.py",
+    "vehicle_perception_runtime_fix/config.yaml",
+    "vehicle_perception_runtime_fix/depth.py",
+    "vehicle_perception_runtime_fix/distance.py",
+    "vehicle_perception_runtime_fix/engine.py",
+    "vehicle_perception_runtime_fix/engine_pipeline.py",
+    "vehicle_perception_runtime_fix/lifecycle.py",
+    "vehicle_perception_runtime_fix/pyproject.toml",
+    "vehicle_perception_runtime_fix/README.md",
+    "vehicle_perception_runtime_fix/result.py",
+    "vehicle_perception_runtime_fix/segmentation.py",
+    "vehicle_perception_runtime_fix/tracking.py",
+    "vehicle_web_view/backend/.gitignore",
+    "vehicle_web_view/backend/config.yaml",
+    "vehicle_web_view/backend/pyproject.toml",
+    "vehicle_web_view/backend/runtime_config.yaml",
+    "vehicle_web_view/backend/scripts/environment/extract_check_environment.py",
+    "vehicle_web_view/backend/scripts/environment/extract_healthcheck.py",
+    "vehicle_web_view/backend/scripts/server/extract_run_server.py",
+    "vehicle_web_view/backend/src/vehicle_web/__init__.py",
+    "vehicle_web_view/backend/src/vehicle_web/api/engine_app.py",
+    "vehicle_web_view/backend/src/vehicle_web/common/engine_paths.py",
+    "vehicle_web_view/backend/src/vehicle_web/common/engine_server_options.py",
+    "vehicle_web_view/backend/src/vehicle_web/runtime/engine_adapter.py",
+    "vehicle_web_view/backend/src/vehicle_web/runtime/engine_session.py",
+    "vehicle_web_view/backend/src/vehicle_web/streaming/engine_latest.py",
+    "vehicle_web_view/backend/src/vehicle_web/streaming/engine_media.py",
+    "vehicle_web_view/backend/src/vehicle_web/streaming/engine_rtc_metrics.py",
+    "vehicle_web_view/backend/src/vehicle_web/streaming/engine_video_quality.py",
+    "vehicle_web_view/backend/src/vehicle_web/visualization/engine_overlay.py",
+    "vehicle_web_view/backend/tests/test_api.py",
+    "vehicle_web_view/backend/tests/test_docker_deployment.py",
+    "vehicle_web_view/backend/tests/test_live_core.py",
+    "vehicle_web_view/backend/tests/test_network_server.py",
+    "vehicle_web_view/backend/tests/test_received_geometry.py",
+    "vehicle_web_view/backend/tests/test_runtime_adapter.py",
+    "vehicle_web_view/backend/tests/test_video_quality.py",
+    "vehicle_web_view/backend/uv.lock",
+    "vehicle_web_view/docs/api.md",
+    "vehicle_web_view/docs/validation.md",
+    "vehicle_web_view/frontend/.gitignore",
+    "vehicle_web_view/frontend/index.html",
+    "vehicle_web_view/frontend/package.json",
+    "vehicle_web_view/frontend/package-lock.json",
+    "vehicle_web_view/frontend/src/engine_connection.js",
+    "vehicle_web_view/frontend/src/engine_connection.test.js",
+    "vehicle_web_view/frontend/src/main.jsx",
+    "vehicle_web_view/frontend/src/style.css",
+    "vehicle_web_view/frontend/vite.config.js",
+    "vehicle_web_view/README.md"
+  ],
+  "modified_files": [],
+  "files_to_remove": [],
+  "unbundled_required_assets": [],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "size_bytes": 349,
+      "sha256": "dc0378582a6ea040698c03c11b285a1757c025b36ac3389adc109ca6a25b2e77",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": ".env",
+      "size_bytes": 87,
+      "sha256": "8faaeb634e14144d3a34cae28a356e697029982a899d341847d9358f63ac76ed",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 166,
+      "sha256": "5e535ff7bff5edddf4ee297d95d882f77ea5bf4adeb54ec3f573b9d1f97a05b0",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "compose.yaml",
+      "size_bytes": 1704,
+      "sha256": "014f760502b4cb3c926f92619361cbb4f803a9ae949b765113cd753102e28a13",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "Dockerfile",
+      "size_bytes": 1949,
+      "sha256": "8fce84fbca1e3bbbba723457a2535b4831af86e0d4158586c995a9f0a20d8de7",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "docs/phone_video_quality.md",
+      "size_bytes": 3517,
+      "sha256": "ea20b8f5aabb34cf773e6509ac1bf6a67f78161830d5d61741a221aeb60e3c8b",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "docs/validation.md",
+      "size_bytes": 4450,
+      "sha256": "f852d6fffb97467f66ece7df5ee976f42894407e789b020c7c3bbdb2b8184053",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "docs/web_video_quality.md",
+      "size_bytes": 3394,
+      "sha256": "8af226fad50d88e6de3c11375c4a68dc15364fcacf79c6e36909f8f5f2600684",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "models/unidepth-v2-vitb14/config.json",
+      "size_bytes": 3483,
+      "sha256": "5f16045f79d323ea3d457b1b25eead9d9772e932df12bc6e5711fd78422db3cc",
+      "classification": "NEW",
+      "source_sha256": "5f16045f79d323ea3d457b1b25eead9d9772e932df12bc6e5711fd78422db3cc",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "models/unidepth-v2-vitb14/model.safetensors",
+      "size_bytes": 457726148,
+      "sha256": "871289bd6464fc1a8088fcd2a9bbe39f7746aa40cfa562c608f8e928bf053597",
+      "classification": "NEW",
+      "source_sha256": "871289bd6464fc1a8088fcd2a9bbe39f7746aa40cfa562c608f8e928bf053597",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "models/yolo26m-seg.pt",
+      "size_bytes": 54750385,
+      "sha256": "16b636f04e8fb6a325b3370f22dc5e5535ff473e384f4d041fd28d788f6ee9f5",
+      "classification": "NEW",
+      "source_sha256": "16b636f04e8fb6a325b3370f22dc5e5535ff473e384f4d041fd28d788f6ee9f5",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 8791,
+      "sha256": "ecd2373b95b8954172fefe983a9f796e9d27b45e3bf5a60e5a04e78320eedc20",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "scripts/deployment/extract_verify_bundle.py",
+      "size_bytes": 3931,
+      "sha256": "9c38851a184e7ef68591cd6ec40403d8da728074e201894376dafd8041e05ba4",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/__init__.py",
+      "size_bytes": 254,
+      "sha256": "b6ab0677ed798ed3ee32443b1bf3c8da1e62e769d186348f370c9a9edffb3a3d",
+      "classification": "NEW",
+      "source_sha256": "b6ab0677ed798ed3ee32443b1bf3c8da1e62e769d186348f370c9a9edffb3a3d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/config.py",
+      "size_bytes": 5091,
+      "sha256": "6a4a5e74b05be465a07470d137efbc6c57e795c95f89083ba799509aad915e2c",
+      "classification": "NEW",
+      "source_sha256": "6a4a5e74b05be465a07470d137efbc6c57e795c95f89083ba799509aad915e2c",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/config.yaml",
+      "size_bytes": 938,
+      "sha256": "d894121e298ee52af12c278f78251a7ff3c7eed5c05b4dca3d01380a947a874f",
+      "classification": "NEW",
+      "source_sha256": "d894121e298ee52af12c278f78251a7ff3c7eed5c05b4dca3d01380a947a874f",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/depth.py",
+      "size_bytes": 1930,
+      "sha256": "4e9c90b6a0c5890b38fd84a56ae37b26ae51714c9afae449ac91e4af88dbc31d",
+      "classification": "NEW",
+      "source_sha256": "4e9c90b6a0c5890b38fd84a56ae37b26ae51714c9afae449ac91e4af88dbc31d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/distance.py",
+      "size_bytes": 3147,
+      "sha256": "525ec10a6fd2c15d6c156aad1038b92fd3e24b1d5a425da1b584ef20bafd483d",
+      "classification": "NEW",
+      "source_sha256": "525ec10a6fd2c15d6c156aad1038b92fd3e24b1d5a425da1b584ef20bafd483d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/engine.py",
+      "size_bytes": 11026,
+      "sha256": "798dba7bc1d92254adf6735467b178db053fb7eb36b2a62a3051e5ca9f7bfb99",
+      "classification": "NEW",
+      "source_sha256": "798dba7bc1d92254adf6735467b178db053fb7eb36b2a62a3051e5ca9f7bfb99",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/engine_pipeline.py",
+      "size_bytes": 6401,
+      "sha256": "db4c08b4d80a2b4b046ea1106af9caa533e6ed6cdd7f3a37daae6af3ed1b1ffd",
+      "classification": "NEW",
+      "source_sha256": "db4c08b4d80a2b4b046ea1106af9caa533e6ed6cdd7f3a37daae6af3ed1b1ffd",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/lifecycle.py",
+      "size_bytes": 5450,
+      "sha256": "346007a7f33b4886e3408bf1d834968cd8d5f348c273dac91f0a9b2285529cb0",
+      "classification": "NEW",
+      "source_sha256": "346007a7f33b4886e3408bf1d834968cd8d5f348c273dac91f0a9b2285529cb0",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/pyproject.toml",
+      "size_bytes": 525,
+      "sha256": "0888443757464fbf7386c430afbfe4b5596bde5416fa148cac276019a30fd47d",
+      "classification": "NEW",
+      "source_sha256": "0888443757464fbf7386c430afbfe4b5596bde5416fa148cac276019a30fd47d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/README.md",
+      "size_bytes": 4631,
+      "sha256": "1a874709b4c406c82a0b9a42e2bb177cfc0b0bb2787ad2155aa5016ec7c14880",
+      "classification": "NEW",
+      "source_sha256": "1a874709b4c406c82a0b9a42e2bb177cfc0b0bb2787ad2155aa5016ec7c14880",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/result.py",
+      "size_bytes": 2165,
+      "sha256": "2af4edd0adbc0480f37f5dd3113d16712e86b7c9e0e868e8c7bb8de3c4251ac6",
+      "classification": "NEW",
+      "source_sha256": "2af4edd0adbc0480f37f5dd3113d16712e86b7c9e0e868e8c7bb8de3c4251ac6",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/segmentation.py",
+      "size_bytes": 2570,
+      "sha256": "f2375d6e70b32df78154db219a9420b918f90f525d20d4fce36a6b2b58f5d1c1",
+      "classification": "NEW",
+      "source_sha256": "f2375d6e70b32df78154db219a9420b918f90f525d20d4fce36a6b2b58f5d1c1",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_perception_runtime_fix/tracking.py",
+      "size_bytes": 5037,
+      "sha256": "264f133e03c1f1c514fbb8c11586ba52039ff79a522959677703839ea0e70a29",
+      "classification": "NEW",
+      "source_sha256": "264f133e03c1f1c514fbb8c11586ba52039ff79a522959677703839ea0e70a29",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/.gitignore",
+      "size_bytes": 47,
+      "sha256": "f60a12b3dfc476d4a87b0f403b1d5a4f51309a5547e36f349b2ffcac1cc964bc",
+      "classification": "NEW",
+      "source_sha256": "f60a12b3dfc476d4a87b0f403b1d5a4f51309a5547e36f349b2ffcac1cc964bc",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/config.yaml",
+      "size_bytes": 678,
+      "sha256": "4ca03d3f20eec79f51fca3afd5dfadd82d3d8690beabc57f0c130595e760a846",
+      "classification": "NEW",
+      "source_sha256": "4ca03d3f20eec79f51fca3afd5dfadd82d3d8690beabc57f0c130595e760a846",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/pyproject.toml",
+      "size_bytes": 781,
+      "sha256": "841ee9cc4957713682434c059b6a1081c9450991708e55033afaf21274bf5dbe",
+      "classification": "NEW",
+      "source_sha256": "841ee9cc4957713682434c059b6a1081c9450991708e55033afaf21274bf5dbe",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/runtime_config.yaml",
+      "size_bytes": 876,
+      "sha256": "a1d3d85d828c1a64143fa290335330aeb6e98b8d323d17526d2091965c853be4",
+      "classification": "NEW",
+      "source_sha256": "a1d3d85d828c1a64143fa290335330aeb6e98b8d323d17526d2091965c853be4",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/scripts/environment/extract_check_environment.py",
+      "size_bytes": 2025,
+      "sha256": "0ce737e43f87898f05d88ecf278b6e1f73c1acac13dca633abd7f6226b1ba33b",
+      "classification": "NEW",
+      "source_sha256": "0ce737e43f87898f05d88ecf278b6e1f73c1acac13dca633abd7f6226b1ba33b",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/scripts/environment/extract_healthcheck.py",
+      "size_bytes": 818,
+      "sha256": "f28bfafde9900bcffe1951dbf64316e8d41084cdc7d496fada93018309588d1a",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "vehicle_web_view/backend/scripts/server/extract_run_server.py",
+      "size_bytes": 899,
+      "sha256": "aa1aee79bfeef67c6e2527c2c278e3155a46ad8cf6c7b5dcbe8aa50cf62e65ab",
+      "classification": "NEW",
+      "source_sha256": "7dee6f23e9c73c9c58093ddb679df8dd0371c95a2515779174f4091d349af960",
+      "copy_state": "ADAPTED_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/__init__.py",
+      "size_bytes": 67,
+      "sha256": "a941454e584d1d226953b3371f99f89524d5363d2590bd8ec993939b3741488b",
+      "classification": "NEW",
+      "source_sha256": "a941454e584d1d226953b3371f99f89524d5363d2590bd8ec993939b3741488b",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/api/engine_app.py",
+      "size_bytes": 8267,
+      "sha256": "bcd239fcff17706a9ee20ccaef7b791136574ce6e706ccd335969a02ef6830dc",
+      "classification": "NEW",
+      "source_sha256": "bcd239fcff17706a9ee20ccaef7b791136574ce6e706ccd335969a02ef6830dc",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/common/engine_paths.py",
+      "size_bytes": 2475,
+      "sha256": "3391c8e06a32556da7bf49648ce1f04bb33b548bee26a3093c636498109c667c",
+      "classification": "NEW",
+      "source_sha256": "3391c8e06a32556da7bf49648ce1f04bb33b548bee26a3093c636498109c667c",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/common/engine_server_options.py",
+      "size_bytes": 583,
+      "sha256": "f9306fe05b171b37fac606c3cb38969eda4be4c0fd5a64db8a5ab71ca684acb7",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/runtime/engine_adapter.py",
+      "size_bytes": 1026,
+      "sha256": "ee558885dfe806adffd5cff584bae77636e63e87aea645576c31e815b614097a",
+      "classification": "NEW",
+      "source_sha256": "ee558885dfe806adffd5cff584bae77636e63e87aea645576c31e815b614097a",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/runtime/engine_session.py",
+      "size_bytes": 6674,
+      "sha256": "870c4cbe7405607d1b2719d26f9833f38ae84a3faf44981e11d8969e6961c79d",
+      "classification": "NEW",
+      "source_sha256": "870c4cbe7405607d1b2719d26f9833f38ae84a3faf44981e11d8969e6961c79d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/streaming/engine_latest.py",
+      "size_bytes": 2473,
+      "sha256": "b57e72cc47488d76a50d4c841ac15c5cb1c4e6d51c66d793dbe773127f44e892",
+      "classification": "NEW",
+      "source_sha256": "b57e72cc47488d76a50d4c841ac15c5cb1c4e6d51c66d793dbe773127f44e892",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/streaming/engine_media.py",
+      "size_bytes": 3092,
+      "sha256": "d69bf597dbbfb36d984ffd8f49203c92f47e56b7f4bfe326194bb17cdfac1f44",
+      "classification": "NEW",
+      "source_sha256": "d69bf597dbbfb36d984ffd8f49203c92f47e56b7f4bfe326194bb17cdfac1f44",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/streaming/engine_rtc_metrics.py",
+      "size_bytes": 1880,
+      "sha256": "1dd61ce848a3f15485e4ba842a8398fb51c5954665021b6076a1df3d4d03a32e",
+      "classification": "NEW",
+      "source_sha256": "1dd61ce848a3f15485e4ba842a8398fb51c5954665021b6076a1df3d4d03a32e",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/streaming/engine_video_quality.py",
+      "size_bytes": 1289,
+      "sha256": "61285795cea2af32466005118e80634d7ea6335784ce202bc83b123bd68d7ed9",
+      "classification": "NEW",
+      "source_sha256": "61285795cea2af32466005118e80634d7ea6335784ce202bc83b123bd68d7ed9",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/src/vehicle_web/visualization/engine_overlay.py",
+      "size_bytes": 1509,
+      "sha256": "75e20297a39dd69887b71496ce96c054dc3d94e59cb78aed1743ac1166150685",
+      "classification": "NEW",
+      "source_sha256": "75e20297a39dd69887b71496ce96c054dc3d94e59cb78aed1743ac1166150685",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_api.py",
+      "size_bytes": 4955,
+      "sha256": "8276c08878e900cd06e21b991a5d0e8fe97a310290e23f4b91aa6db8ce6a59f0",
+      "classification": "NEW",
+      "source_sha256": "8276c08878e900cd06e21b991a5d0e8fe97a310290e23f4b91aa6db8ce6a59f0",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_docker_deployment.py",
+      "size_bytes": 4585,
+      "sha256": "a893fab41f87a85e9cbdf160b2a9252b6001561e2be9b699d9207ae3f5f56b95",
+      "classification": "NEW",
+      "source_sha256": null,
+      "copy_state": "NEW_FILE"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_live_core.py",
+      "size_bytes": 6879,
+      "sha256": "543d7b0ff6c6de4739ae0b4c0d01a15ec5afe87cb7f27f9ac2cf7337f0497fa3",
+      "classification": "NEW",
+      "source_sha256": "543d7b0ff6c6de4739ae0b4c0d01a15ec5afe87cb7f27f9ac2cf7337f0497fa3",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_network_server.py",
+      "size_bytes": 1187,
+      "sha256": "e028e8193a64cab51eb45622dee0a9dea1d9b457404ffc1fc4a9e0340b4018b4",
+      "classification": "NEW",
+      "source_sha256": "e028e8193a64cab51eb45622dee0a9dea1d9b457404ffc1fc4a9e0340b4018b4",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_received_geometry.py",
+      "size_bytes": 964,
+      "sha256": "f6c5686204a09983485c61cee522420743405f40565fde6e05ed147ef07a5952",
+      "classification": "NEW",
+      "source_sha256": "f6c5686204a09983485c61cee522420743405f40565fde6e05ed147ef07a5952",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_runtime_adapter.py",
+      "size_bytes": 946,
+      "sha256": "5cde854954cb7f262bb36417ccd4140aa08f14487832399993d0219981e366c8",
+      "classification": "NEW",
+      "source_sha256": "5cde854954cb7f262bb36417ccd4140aa08f14487832399993d0219981e366c8",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/tests/test_video_quality.py",
+      "size_bytes": 1156,
+      "sha256": "a5ca8a95634a604f407dce881232ffa44b279bda1a2ed1bdb90ac9b65d1dc733",
+      "classification": "NEW",
+      "source_sha256": "a5ca8a95634a604f407dce881232ffa44b279bda1a2ed1bdb90ac9b65d1dc733",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/backend/uv.lock",
+      "size_bytes": 236427,
+      "sha256": "ed9618fd0c38b1c638ecb9e28486219114e49d5b6910890e42b47748d4783e7c",
+      "classification": "NEW",
+      "source_sha256": "ed9618fd0c38b1c638ecb9e28486219114e49d5b6910890e42b47748d4783e7c",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/docs/api.md",
+      "size_bytes": 2556,
+      "sha256": "a4e5c7399b65c0b5825fc5b694bf168cbb3124deb82e9fce5dd5979b8a55cdef",
+      "classification": "NEW",
+      "source_sha256": "a4e5c7399b65c0b5825fc5b694bf168cbb3124deb82e9fce5dd5979b8a55cdef",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/docs/validation.md",
+      "size_bytes": 4997,
+      "sha256": "fb0e0ecd0cb2f16f9f14e0ae500300d47f58896d47a388c14433a79d6da84db1",
+      "classification": "NEW",
+      "source_sha256": "fb0e0ecd0cb2f16f9f14e0ae500300d47f58896d47a388c14433a79d6da84db1",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/.gitignore",
+      "size_bytes": 20,
+      "sha256": "790e3169bc19b046fe55ba1da6d13b976c28363c8c00462a2195fe5faf260910",
+      "classification": "NEW",
+      "source_sha256": "790e3169bc19b046fe55ba1da6d13b976c28363c8c00462a2195fe5faf260910",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/index.html",
+      "size_bytes": 255,
+      "sha256": "475197f257bc4e14c2051415f172e65aafcb89233886ecf2dfb1a876e99952b3",
+      "classification": "NEW",
+      "source_sha256": "475197f257bc4e14c2051415f172e65aafcb89233886ecf2dfb1a876e99952b3",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/package.json",
+      "size_bytes": 280,
+      "sha256": "003b8c85784386558f85ae221df3159ab79381456839e26546e16069955b79ae",
+      "classification": "NEW",
+      "source_sha256": "003b8c85784386558f85ae221df3159ab79381456839e26546e16069955b79ae",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/package-lock.json",
+      "size_bytes": 35910,
+      "sha256": "fc759f9e74ed2a6bea1e0c5a7868fe3e83ff4a08d0aa2b61294a9a845f5ecfb3",
+      "classification": "NEW",
+      "source_sha256": "fc759f9e74ed2a6bea1e0c5a7868fe3e83ff4a08d0aa2b61294a9a845f5ecfb3",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/src/engine_connection.js",
+      "size_bytes": 1970,
+      "sha256": "0709bb3256405fe299019397104ff768fa0b18452d5b247f0b5e40a560735ba6",
+      "classification": "NEW",
+      "source_sha256": "0709bb3256405fe299019397104ff768fa0b18452d5b247f0b5e40a560735ba6",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/src/engine_connection.test.js",
+      "size_bytes": 1736,
+      "sha256": "705113098afe59eca33fdda0b38cb56e3e862423fca7c0e74755493f80bb7a4d",
+      "classification": "NEW",
+      "source_sha256": "705113098afe59eca33fdda0b38cb56e3e862423fca7c0e74755493f80bb7a4d",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/src/main.jsx",
+      "size_bytes": 5821,
+      "sha256": "fe87aba408165031939cb656fcb7457f07ef3a364e0e306c5a678d9e4659fcc3",
+      "classification": "NEW",
+      "source_sha256": "fe87aba408165031939cb656fcb7457f07ef3a364e0e306c5a678d9e4659fcc3",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/src/style.css",
+      "size_bytes": 986,
+      "sha256": "aee5b3ab05c5456229af370b641a43c0845f0100b86802c26a1541b1c2e97846",
+      "classification": "NEW",
+      "source_sha256": "aee5b3ab05c5456229af370b641a43c0845f0100b86802c26a1541b1c2e97846",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/frontend/vite.config.js",
+      "size_bytes": 171,
+      "sha256": "8edb9be98e7ea86f9b03067a448783f7d522c705e05941a46caef8460ed585aa",
+      "classification": "NEW",
+      "source_sha256": "8edb9be98e7ea86f9b03067a448783f7d522c705e05941a46caef8460ed585aa",
+      "copy_state": "EXACT_COPY"
+    },
+    {
+      "path": "vehicle_web_view/README.md",
+      "size_bytes": 10741,
+      "sha256": "d3ab1019ecc4332daaba974653b630d5f38338ea348ffdb2b849bb60e816ad66",
+      "classification": "NEW",
+      "source_sha256": "b79bd74f67ebe387bdcc4ee03cd8b10c42901a834cad9ecce3667f57006e2a9a",
+      "copy_state": "ADAPTED_COPY"
+    }
+  ],
+  "file_count_excluding_manifest": 64,
+  "total_bytes_excluding_manifest": 512915520,
+  "manifest_self_hash": "excluded to avoid a circular checksum"
+}

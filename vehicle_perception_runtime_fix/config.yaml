@@ -1,0 +1,55 @@
+models:
+  segmentation: "yolo26m-seg.pt"
+  depth: "unidepth-v2-vitb14"
+
+device:
+  type: "cuda"
+  gpu_id: 0
+
+inference:
+  confidence: 0.25
+  resolution_level: 3
+
+pipeline:
+  queue_capacity: 3
+  max_inflight_frames: 3
+  group_size: 1
+
+tracking:
+  tracker: "botsort"
+  track_high_thresh: 0.25
+  track_low_thresh: 0.1
+  new_track_thresh: 0.25
+  track_buffer: 30
+  match_thresh: 0.8
+  fuse_score: true
+  gmc: "sparseOptFlow"
+  proximity_thresh: 0.5
+  appearance_thresh: 0.8
+  reid: false
+
+distance:
+  method: "mask_exact_median"
+  near_max_m: 15.0
+  mid_max_m: 40.0
+
+paths:
+  model_root: "../models"
+  runtime_root: "../runtime_root"
+
+artifacts:
+  enabled: false
+
+classes:
+  car: "vehicle"
+  truck: "vehicle"
+  bus: "vehicle"
+  person: "person"
+  bicycle: "two_wheeler"
+  motorcycle: "two_wheeler"
+
+camera:
+  intrinsic:
+    - [1266.417203046554, 0.0, 816.2670197447984]
+    - [0.0, 1266.417203046554, 491.50706579294757]
+    - [0.0, 0.0, 1.0]

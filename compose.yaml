@@ -1,0 +1,59 @@
+services:
+  perception:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # No fixed container name: do not collide with other users' containers.
+    network_mode: host
+    init: true
+    restart: "no"
+    read_only: true
+    user: "10001:10001"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    stop_grace_period: 60s
+    shm_size: 1gb
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,exec,size=4g,mode=1777
+    environment:
+      VEHICLE_HTTP_PORT: "${HTTP_PORT:-18000}"
+      CUDA_VISIBLE_DEVICES: "0"
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${GPU_DEVICE_ID:-0}"]
+              capabilities: [gpu]
+    volumes:
+      - type: bind
+        source: ./vehicle_perception_runtime_fix
+        target: /app/vehicle_perception_runtime_fix
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./models
+        target: /app/models
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./vehicle_web_view/backend/config.yaml
+        target: /app/vehicle_web_view/backend/config.yaml
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./vehicle_web_view/backend/runtime_config.yaml
+        target: /app/vehicle_web_view/backend/runtime_config.yaml
+        read_only: true
+        bind:
+          create_host_path: false
+    healthcheck:
+      test: ["CMD", "python", "scripts/environment/extract_healthcheck.py"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s

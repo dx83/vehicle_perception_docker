@@ -1,0 +1,22 @@
+# All paths are relative to this file. No model download or recording.
+runtime_root: "../../vehicle_perception_runtime_fix"
+runtime_config: "runtime_config.yaml"
+frontend_dist: "../frontend/dist"
+ice_servers: []
+max_viewers: 4
+idle_timeout_sec: 20
+# Server -> browser encoder policy (bps); network feedback may lower bitrate.
+# Applies to all viewers in this single server process, not the phone encoder.
+viewer_bitrate_bps:
+  min: 250000
+  start: 4000000
+  max: 8000000
+camera_profile:
+  verified: false
+  device_id: ""
+  camera_id: ""
+  width: 1280
+  height: 720
+  orientation: landscape
+  zoom: 1.0
+# Before verified=true, set the actual calibrated K in runtime_config.yaml.

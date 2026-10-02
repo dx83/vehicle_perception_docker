@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vehicle-web-view"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "aiortc==1.15.0", "fastapi>=0.115,<1", "uvicorn>=0.34,<1",
+  "numpy>=2,<3", "opencv-python>=4.11", "pyyaml>=6,<7", "websockets>=15,<17",
+]
+
+[project.optional-dependencies]
+gpu = [
+  "torch==2.10.0", "ultralytics==8.4.150", "lap>=0.5.12",
+  "unidepth @ git+https://github.com/lpiccinelli-eth/UniDepth.git@8d8cfe4c7ee15297099983607febf0d4f32eb3d6",
+]
+
+[dependency-groups]
+dev = ["pytest>=9", "httpx>=0.28"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vehicle_web"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,21 @@
+# Models and runtime are local read-only mounts, never Docker image layers.
+models/
+vehicle_perception_runtime_fix/
+manifest.json
+docs/
+tests/
+**/.venv/
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+**/*.egg-info/
+**/outputs/
+**/videos/
+**/datas/
+**/dist/
+vehicle_web_view/backend/tests/
+vehicle_web_view/docs/
+**/README.md
+.env
+.git/
